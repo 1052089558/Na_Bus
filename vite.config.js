@@ -17,7 +17,7 @@ export default defineConfig({
   // 打包配置
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      '@': resolve('src'),
     },
   },
   // 引入全局基础less
