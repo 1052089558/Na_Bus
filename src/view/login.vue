@@ -11,18 +11,27 @@
       >
         <h3 class="title">系统登录</h3>
         <el-form-item label="账号:" prop="username" label-width="70px">
-          <el-input v-model="loginForm.username"></el-input>
+          <el-input
+            v-model="loginForm.username"
+            prefix-icon="user"
+            placeholder="请输入账号"
+          ></el-input>
         </el-form-item>
         <el-form-item label="密码:" prop="password" label-width="70px">
           <el-input
             type="password"
             v-model="loginForm.password"
+            prefix-icon="lock"
             autocomplete="off"
+            placeholder="请输入密码"
           ></el-input>
         </el-form-item>
-        <el-form-item label="验证码" prop="code" label-width="70px">
-          <el-input v-model="loginForm.code" autocomplete="off"></el-input>
-          <!-- <el-image class="img" :src="captchaImg" @click="getCaptchaImg" /> -->
+        <el-form-item label="验证码:" prop="code" label-width="70px">
+          <el-input
+            v-model="loginForm.code"
+            autocomplete="off"
+            placeholder="请输入验证码"
+          ></el-input>
           <div class="img-verify">
             <canvas
               ref="verify"
@@ -31,7 +40,7 @@
               @click="handleDraw"
             ></canvas>
           </div>
-          <i class="el-icon-refresh refresh" @click="handleDraw">刷新</i>
+          <i class="refresh" @click="handleDraw">刷新</i>
         </el-form-item>
         <el-row
           type="flex"
@@ -55,7 +64,7 @@
             type="primary"
             style="width: 100%"
             :loading="logining"
-            @click="submitForm()"
+            @click="submitForm"
             >登录</el-button
           >
         </el-form-item>
@@ -70,13 +79,17 @@
       >
         <h3 class="title">系统注册</h3>
         <el-form-item label="账号" prop="username" label-width="70px">
-          <el-input v-model="registerForm.username"></el-input>
+          <el-input
+            v-model="registerForm.username"
+            placeholder="请输入账号"
+          ></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password" label-width="70px">
           <el-input
             type="password"
             v-model="registerForm.password"
             autocomplete="off"
+            placeholder="请输入密码"
           ></el-input>
         </el-form-item>
         <el-row
@@ -103,9 +116,9 @@
 </template>
 
 <script>
-import { create } from "lodash";
 import { onMounted, reactive, toRefs, watch, ref } from "vue";
-import { createCode } from "@/utils/icon.js";
+import { ElLoading, ElMessage } from "element-plus";
+import { useRouter } from "vue-router";
 export default {
   setup() {
     const state = reactive({
@@ -116,12 +129,13 @@ export default {
       codewidth: 150,
       codeheight: 40,
       loginForm: {
-        // username: "",
-        // password: "",
+        username: "",
+        password: "",
+        code: "",
       },
       registerForm: {
-        // username: "",
-        // password: "",
+        username: "",
+        password: "",
       },
       loginrules: {
         username: [
@@ -138,14 +152,14 @@ export default {
       },
       checked: true,
     });
-
-    const verify = ref(null);
     onMounted(() => {
-      state.imgCode = draw();
+      handleDraw();
     });
-    const handleDraw = () => {
-      state.imgCode = draw();
-    };
+    const verify = ref(null);
+    const router = useRouter();
+    const form = ref(null); //登录dom
+    const form2 = ref(null); //注册dom
+
     // 随机数
     const randomNum = (min, max) => {
       return parseInt(Math.random() * (max - min) + min);
@@ -158,7 +172,7 @@ export default {
       return `rgb(${r},${g},${b})`;
     };
     // 绘制图片
-    const draw = () => {
+    const handleDraw = () => {
       // 3.填充背景颜色，背景颜色要浅一点
       const ctx = verify.value.getContext("2d");
       // 填充颜色
@@ -167,7 +181,6 @@ export default {
       ctx.fillRect(0, 0, state.codewidth, state.codeheight);
       // 定义paramText
       state.imgCode = "";
-
       // 4.随机产生字符串，并且随机旋转
       for (let i = 0; i < 4; i++) {
         // 随机的四个字
@@ -208,6 +221,7 @@ export default {
         ctx.fillText(text, -15 + 5, -15);
         ctx.restore();
       }
+
       // 5.随机产生5条干扰线,干扰线的颜色要浅一点
       for (let i = 0; i < 5; i++) {
         ctx.beginPath();
@@ -224,12 +238,29 @@ export default {
         ctx.stroke();
       }
     };
-    const form = ref(null);
-    const form2 = ref(null);
+
     const submitForm = () => {
+      if (state.loginForm.code != state.imgCode) {
+        ElMessage({
+          message: "验证码有误",
+          type: "warning",
+          center: true,
+          duration: 1000,
+        });
+        state.loginForm.code = "";
+        return;
+      }
       form.value.validate((valid) => {
         if (valid) {
-          router.push({ path: "/home" });
+          //掉登录接口
+
+          router.push({ path: "/" });
+          ElMessage({
+            message: "登录成功！",
+            type: "success",
+            center: true,
+            duration: 1000,
+          });
         }
       });
     };
@@ -240,6 +271,7 @@ export default {
 
     return {
       ...toRefs(state),
+      router,
       form,
       form2,
       verify,
@@ -277,6 +309,11 @@ export default {
   }
   .img-verify {
     margin-top: 10px;
+  }
+  .refresh {
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 16px;
   }
 }
 </style>

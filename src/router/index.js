@@ -1,15 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
+import Layout from '../layout/index.vue'
 const routes = [
-    {
-        path: "/",
-        name: "default",
-        redirect: "login",
-        component: () => import("../view/login.vue"),
-    },
     {
         path: "/login",
         name: "login",
         component: () => import("../view/login.vue")
+    },
+    {
+        path: "/",
+        name:"/",
+        redirect: "/home",
+        component: Layout,
+        children: [
+            {
+                path: "home",
+                component: () => import("../view/home/index.vue"),
+                name: "Home",
+                meta: { title: '首页', icon: "house" }
+            }
+        ]
     },
 ];
  
