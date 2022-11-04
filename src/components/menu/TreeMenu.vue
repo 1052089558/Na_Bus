@@ -29,12 +29,12 @@
                 <i :class="item.icone" v-if="item.icone"></i>
                 <span>{{ item.data.name }}</span>
               </template>
-              <div v-for="(k, index) in item.children" :key="index">
-                <el-menu-item :index="k.data.url" v-bind:key="k.data.menuId">
+              <template v-for="(k, index) in item.children" :key="index">
+                <el-menu-item :index="k.data.url">
                   <i :class="k.icone" v-if="k.icone"></i>
                   <template v-slot:title>{{ item.data.name }}</template>
                 </el-menu-item>
-              </div>
+              </template>
             </el-sub-menu>
             <el-menu-item
               :index="item.data.url"

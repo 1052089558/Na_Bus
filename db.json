@@ -1,433 +1,460 @@
 [
   {
-      "type": 0,
-      "data": {
-          "menuId": "index",
-          "pMenuId": "iDriverAdmin",
-          "appId": "iDriverAdmin",
-          "url": "/index",
-          "name": "首页",
-          "showT": "1",
-          "tType": "1",
-          "num": 0
-      },
-      "children": []
+    "type": 0,
+    "data": {
+      "menuId": "index",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/index",
+      "name": "首页",
+      "showT": "1",
+      "tType": "1",
+      "num": 0
+    },
+    "children": []
   },
   {
-      "type": 0,
-      "data": {
-          "menuId": "file",
-          "pMenuId": "iDriverAdmin",
+    "type": 0,
+    "data": {
+      "menuId": "file",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/file",
+      "name": "调度中心",
+      "showT": "1",
+      "tType": "1",
+      "num": 1
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "fileInput",
+          "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/file",
-          "name": "调度中心",
+          "url": "/file/fileInput",
+          "name": "查看订单",
           "showT": "1",
           "tType": "1",
           "num": 1
-      },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "fileInput",
-                  "pMenuId": "file",
-                  "appId": "iDriverAdmin",
-                  "url": "/file/fileInput",
-                  "name": "查看订单",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 1
-              },
-              "children": []
-          },
-          {
-            "type": 0,
-            "data": {
-                "menuId": "fileInput",
-                "pMenuId": "file",
-                "appId": "iDriverAdmin",
-                "url": "/file/fileInput",
-                "name": "用车申请",
-                "showT": "1",
-                "tType": "1",
-                "num": 1
-            },
-            "children": []
         },
-        {
-          "type": 0,
-          "data": {
-              "menuId": "fileInput",
-              "pMenuId": "file",
-              "appId": "iDriverAdmin",
-              "url": "/file/fileInput",
-              "name": "补录派车单",
-              "showT": "1",
-              "tType": "1",
-              "num": 1
-          },
-          "children": []
-      }
-      
-      ]
-  },
-  {
-      "type": 0,
-      "data": {
-          "menuId": "safetyRecord",
-          "pMenuId": "iDriverAdmin",
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "fileInput",
+          "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/safetyRecord",
-          "name": "安全记录",
+          "url": "/file/fileInput",
+          "name": "用车申请",
           "showT": "1",
           "tType": "1",
           "num": 2
+        },
+        "children": []
       },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "behavior",
-                  "pMenuId": "safetyRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/safetyRecord/behavior",
-                  "name": "驾驶行为",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 1
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "violation",
-                  "pMenuId": "safetyRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/safetyRecord/violation",
-                  "name": "违法违章",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 2
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "accident",
-                  "pMenuId": "safetyRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/safetyRecord/accident",
-                  "name": "事故记录",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 3
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "ruleViolation",
-                  "pMenuId": "safetyRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/safetyRecord/ruleViolation",
-                  "name": "违纪记录",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 4
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "study",
-                  "pMenuId": "safetyRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/safetyRecord/study",
-                  "name": "培训教育",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 5
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "wheelWarning",
-                  "pMenuId": "safetyRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/safetyRecord/wheelWarning",
-                  "name": "方向盘预警",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 6
-              },
-              "children": []
-          }
-      ]
-  },
-  {
-      "type": 0,
-      "data": {
-          "menuId": "serviceRecord",
-          "pMenuId": "iDriverAdmin",
+      {
+        "type": 0,
+        "data": {
+          "menuId": "fileInput",
+          "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/serviceRecord",
-          "name": "服务记录",
+          "url": "/file/fileInput",
+          "name": "补录派车单",
           "showT": "1",
           "tType": "1",
           "num": 3
+        },
+        "children": []
       },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "complaint",
-                  "pMenuId": "serviceRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/serviceRecord/complaint",
-                  "name": "服务投诉",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 1
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "rewardPunish",
-                  "pMenuId": "serviceRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/serviceRecord/rewardPunish",
-                  "name": "表彰奖惩",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 2
-              },
-              "children": []
-          }
-      ]
-  },
-  {
-      "type": 0,
-      "data": {
-          "menuId": "operateRecord",
-          "pMenuId": "iDriverAdmin",
+      {
+        "type": 0,
+        "data": {
+          "menuId": "fileInput",
+          "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/operateRecord",
-          "name": "运营记录",
+          "url": "/file/fileInput",
+          "name": "省数据导入",
           "showT": "1",
           "tType": "1",
           "num": 4
-      },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "mileageTime",
-                  "pMenuId": "operateRecord",
-                  "appId": "iDriverAdmin",
-                  "url": "/operateRecord/mileageTime",
-                  "name": "里程时长",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 1
-              },
-              "children": []
-          }
-      ]
+        },
+        "children": []
+      }
+    ]
   },
   {
-      "type": 0,
-      "data": {
-          "menuId": "stat",
-          "pMenuId": "iDriverAdmin",
+    "type": 0,
+    "data": {
+      "menuId": "safetyRecord",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/safetyRecord",
+      "name": "业务管理",
+      "showT": "1",
+      "tType": "1",
+      "num": 2
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "behavior",
+          "pMenuId": "safetyRecord",
           "appId": "iDriverAdmin",
-          "url": "/stat",
-          "name": "统计分析",
+          "url": "/safetyRecord/behavior",
+          "name": "车辆管理",
+          "showT": "1",
+          "tType": "1",
+          "num": 1
+        },
+        "children": [
+          {
+            "type": 1,
+            "data": {
+              "menuId": "behavior",
+              "pMenuId": "safetyRecord",
+              "appId": "iDriverAdmin",
+              "url": "/safetyRecord/behavior",
+              "name": "车辆管理",
+              "showT": "1",
+              "tType": "1",
+              "num": 1
+            }
+          }
+        ]
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "violation",
+          "pMenuId": "safetyRecord",
+          "appId": "iDriverAdmin",
+          "url": "/safetyRecord/violation",
+          "name": "违法违章",
+          "showT": "1",
+          "tType": "1",
+          "num": 2
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "accident",
+          "pMenuId": "safetyRecord",
+          "appId": "iDriverAdmin",
+          "url": "/safetyRecord/accident",
+          "name": "事故记录",
+          "showT": "1",
+          "tType": "1",
+          "num": 3
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "ruleViolation",
+          "pMenuId": "safetyRecord",
+          "appId": "iDriverAdmin",
+          "url": "/safetyRecord/ruleViolation",
+          "name": "违纪记录",
+          "showT": "1",
+          "tType": "1",
+          "num": 4
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "study",
+          "pMenuId": "safetyRecord",
+          "appId": "iDriverAdmin",
+          "url": "/safetyRecord/study",
+          "name": "培训教育",
           "showT": "1",
           "tType": "1",
           "num": 5
+        },
+        "children": []
       },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "score",
-                  "pMenuId": "stat",
-                  "appId": "iDriverAdmin",
-                  "url": "/stat/score",
-                  "name": "评分统计",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 1
-              },
-              "children": []
-          }
-      ]
-  },
-  {
-      "type": 0,
-      "data": {
-          "menuId": "baseInfo",
-          "pMenuId": "iDriverAdmin",
+      {
+        "type": 0,
+        "data": {
+          "menuId": "wheelWarning",
+          "pMenuId": "safetyRecord",
           "appId": "iDriverAdmin",
-          "url": "/baseInfo",
-          "name": "基础信息",
+          "url": "/safetyRecord/wheelWarning",
+          "name": "方向盘预警",
           "showT": "1",
           "tType": "1",
           "num": 6
-      },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "dict",
-                  "pMenuId": "baseInfo",
-                  "appId": "iDriverAdmin",
-                  "url": "/sys/dict",
-                  "name": "字典管理",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 2
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "scoreModel",
-                  "pMenuId": "baseInfo",
-                  "appId": "iDriverAdmin",
-                  "url": "/sys/scoreModel",
-                  "name": "评分模型",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 3
-              },
-              "children": []
-          }
-      ]
+        },
+        "children": []
+      }
+    ]
   },
   {
-      "type": 0,
-      "data": {
-          "menuId": "sys",
-          "pMenuId": "iDriverAdmin",
+    "type": 0,
+    "data": {
+      "menuId": "serviceRecord",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/serviceRecord",
+      "name": "服务记录",
+      "showT": "1",
+      "tType": "1",
+      "num": 3
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "complaint",
+          "pMenuId": "serviceRecord",
           "appId": "iDriverAdmin",
-          "url": "/sys",
-          "name": "系统管理",
+          "url": "/serviceRecord/complaint",
+          "name": "服务投诉",
+          "showT": "1",
+          "tType": "1",
+          "num": 1
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "rewardPunish",
+          "pMenuId": "serviceRecord",
+          "appId": "iDriverAdmin",
+          "url": "/serviceRecord/rewardPunish",
+          "name": "表彰奖惩",
+          "showT": "1",
+          "tType": "1",
+          "num": 2
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "data": {
+      "menuId": "operateRecord",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/operateRecord",
+      "name": "运营记录",
+      "showT": "1",
+      "tType": "1",
+      "num": 4
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "mileageTime",
+          "pMenuId": "operateRecord",
+          "appId": "iDriverAdmin",
+          "url": "/operateRecord/mileageTime",
+          "name": "里程时长",
+          "showT": "1",
+          "tType": "1",
+          "num": 1
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "data": {
+      "menuId": "stat",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/stat",
+      "name": "统计分析",
+      "showT": "1",
+      "tType": "1",
+      "num": 5
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "score",
+          "pMenuId": "stat",
+          "appId": "iDriverAdmin",
+          "url": "/stat/score",
+          "name": "评分统计",
+          "showT": "1",
+          "tType": "1",
+          "num": 1
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "data": {
+      "menuId": "baseInfo",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/baseInfo",
+      "name": "基础信息",
+      "showT": "1",
+      "tType": "1",
+      "num": 6
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "dict",
+          "pMenuId": "baseInfo",
+          "appId": "iDriverAdmin",
+          "url": "/sys/dict",
+          "name": "字典管理",
+          "showT": "1",
+          "tType": "1",
+          "num": 2
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "scoreModel",
+          "pMenuId": "baseInfo",
+          "appId": "iDriverAdmin",
+          "url": "/sys/scoreModel",
+          "name": "评分模型",
+          "showT": "1",
+          "tType": "1",
+          "num": 3
+        },
+        "children": []
+      }
+    ]
+  },
+  {
+    "type": 0,
+    "data": {
+      "menuId": "sys",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/sys",
+      "name": "系统管理",
+      "showT": "1",
+      "tType": "1",
+      "num": 7
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "org",
+          "pMenuId": "sys",
+          "appId": "iDriverAdmin",
+          "url": "/sys/org",
+          "name": "机构管理",
+          "showT": "1",
+          "tType": "1",
+          "num": 3
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "role",
+          "pMenuId": "sys",
+          "appId": "iDriverAdmin",
+          "url": "/sys/role",
+          "name": "角色管理",
+          "showT": "1",
+          "tType": "1",
+          "num": 4
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "user",
+          "pMenuId": "sys",
+          "appId": "iDriverAdmin",
+          "url": "/sys/user",
+          "name": "用户管理",
+          "showT": "1",
+          "tType": "1",
+          "num": 5
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "loginLog",
+          "pMenuId": "sys",
+          "appId": "iDriverAdmin",
+          "url": "/sys/loginLog",
+          "name": "登录日志",
+          "showT": "1",
+          "tType": "1",
+          "num": 6
+        },
+        "children": []
+      },
+      {
+        "type": 0,
+        "data": {
+          "menuId": "operationLog",
+          "pMenuId": "sys",
+          "appId": "iDriverAdmin",
+          "url": "/sys/operationLog",
+          "name": "操作日志",
           "showT": "1",
           "tType": "1",
           "num": 7
-      },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "org",
-                  "pMenuId": "sys",
-                  "appId": "iDriverAdmin",
-                  "url": "/sys/org",
-                  "name": "机构管理",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 3
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "role",
-                  "pMenuId": "sys",
-                  "appId": "iDriverAdmin",
-                  "url": "/sys/role",
-                  "name": "角色管理",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 4
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "user",
-                  "pMenuId": "sys",
-                  "appId": "iDriverAdmin",
-                  "url": "/sys/user",
-                  "name": "用户管理",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 5
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "loginLog",
-                  "pMenuId": "sys",
-                  "appId": "iDriverAdmin",
-                  "url": "/sys/loginLog",
-                  "name": "登录日志",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 6
-              },
-              "children": []
-          },
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "operationLog",
-                  "pMenuId": "sys",
-                  "appId": "iDriverAdmin",
-                  "url": "/sys/operationLog",
-                  "name": "操作日志",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 7
-              },
-              "children": []
-          }
-      ]
+        },
+        "children": []
+      }
+    ]
   },
   {
-      "type": 0,
-      "data": {
-          "menuId": "bigScreen",
-          "pMenuId": "iDriverAdmin",
+    "type": 0,
+    "data": {
+      "menuId": "bigScreen",
+      "pMenuId": "iDriverAdmin",
+      "appId": "iDriverAdmin",
+      "url": "/screenCenter",
+      "name": "大屏中心",
+      "showT": "1",
+      "tType": "1",
+      "num": 8
+    },
+    "children": [
+      {
+        "type": 0,
+        "data": {
+          "menuId": "driverScreen",
+          "pMenuId": "bigScreen",
           "appId": "iDriverAdmin",
-          "url": "/screenCenter",
-          "name": "大屏中心",
+          "url": "/screen.html#/screen2",
+          "name": "司机画像",
           "showT": "1",
           "tType": "1",
-          "num": 8
-      },
-      "children": [
-          {
-              "type": 0,
-              "data": {
-                  "menuId": "driverScreen",
-                  "pMenuId": "bigScreen",
-                  "appId": "iDriverAdmin",
-                  "url": "/screen.html#/screen2",
-                  "name": "司机画像",
-                  "showT": "1",
-                  "tType": "1",
-                  "num": 1
-              },
-              "children": [],
-              "blank": true
-          }
-      ],
-      "blank": true
+          "num": 1
+        },
+        "children": [],
+        "blank": true
+      }
+    ],
+    "blank": true
   }
 ]

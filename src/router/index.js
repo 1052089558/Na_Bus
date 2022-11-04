@@ -9,13 +9,13 @@ const routes = [
     {
         path: "/",
         name:"/",
-        redirect: "/home",
+        redirect: "/index",
         component: Layout,
         children: [
             {
-                path: "home",
+                path: "index",
                 component: () => import("../view/home/index.vue"),
-                name: "Home",
+                name: "index",
                 meta: { title: '首页', icon: "house" }
             }
         ]

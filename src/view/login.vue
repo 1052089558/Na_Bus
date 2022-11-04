@@ -254,7 +254,7 @@ export default {
         if (valid) {
           //掉登录接口
 
-          router.push({ path: "/" });
+          router.replace({ path: "/" });
           ElMessage({
             message: "登录成功！",
             type: "success",
@@ -268,7 +268,6 @@ export default {
       location.reload();
       state.flag = true;
     };
-
     return {
       ...toRefs(state),
       router,
