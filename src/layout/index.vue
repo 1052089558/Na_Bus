@@ -5,26 +5,37 @@
         <headertitle></headertitle>
       </el-header>
       <el-container>
-        <el-aside width="250px" height="100%"
-          ><menu :isCollapse="isCollapse"></menu
-        ></el-aside>
-        <el-main>Main</el-main>
+        <el-aside>
+          <el-aside :width="isCollapse ? '60px' : '210px'">
+            <tree-menu :treeData="treeData" />
+          </el-aside>
+        </el-aside>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 <script>
 import headertitle from "./components/headertitle.vue";
-import Menu from "../components/menu/index.vue";
+
 import { reactive, toRefs } from "@vue/reactivity";
+import TreeMenu from "../components/menu/TreeMenu.vue";
+import treeData from "../../db.json";
+import { onMounted } from "@vue/runtime-core";
 export default {
   components: {
     headertitle,
-    Menu,
+    TreeMenu,
   },
   setup() {
     const state = reactive({
       isCollapse: false,
+      treeData: treeData,
+    });
+    onMounted(() => {
+      console.log("TreeMenu", state.treeData);
     });
     return {
       ...toRefs(state),
@@ -47,10 +58,11 @@ export default {
 }
 .el-aside {
   background-color: #d3dce6;
+  width: 250px;
+  height: 100%;
 }
 .el-main {
   background-color: #e9eef3;
   text-align: center;
-  line-height: 160px;
 }
 </style>
