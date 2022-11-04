@@ -8,15 +8,19 @@ const routes = [
     },
     {
         path: "/",
-        name:"/",
-        redirect: "/index",
+        redirect: "/showorder",
         component: Layout,
         children: [
             {
-                path: "index",
-                component: () => import("../view/home/index.vue"),
-                name: "index",
-                meta: { title: '首页', icon: "house" }
+                path: "/showorder",
+                component: () => import("../view/dispatch/showorder.vue"),
+                name: "showorder",
+            },
+            {
+                path: "/carapplay",
+                component: () => import("../view/dispatch/carapplay.vue"),
+                name: "carapplay",
+             
             }
         ]
     },

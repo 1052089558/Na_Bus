@@ -1,25 +1,12 @@
 [
-  {
-    "type": 0,
-    "data": {
-      "menuId": "index",
-      "pMenuId": "iDriverAdmin",
-      "appId": "iDriverAdmin",
-      "url": "/index",
-      "name": "首页",
-      "showT": "1",
-      "tType": "1",
-      "num": 0
-    },
-    "children": []
-  },
+ 
   {
     "type": 0,
     "data": {
       "menuId": "file",
       "pMenuId": "iDriverAdmin",
       "appId": "iDriverAdmin",
-      "url": "/file",
+      "url": "/dispatch",
       "name": "调度中心",
       "showT": "1",
       "tType": "1",
@@ -32,7 +19,7 @@
           "menuId": "fileInput",
           "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/file/fileInput",
+          "url": "/showorder",
           "name": "查看订单",
           "showT": "1",
           "tType": "1",
@@ -46,7 +33,7 @@
           "menuId": "fileInput",
           "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/file/fileInput",
+          "url": "/carapplay",
           "name": "用车申请",
           "showT": "1",
           "tType": "1",
