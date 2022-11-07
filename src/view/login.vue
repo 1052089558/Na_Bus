@@ -40,7 +40,7 @@
               @click="handleDraw"
             ></canvas>
           </div>
-          <i class="refresh" @click="handleDraw">刷新</i>
+          <i class="refresh" @click="handleDraw">看不清，换一张</i>
         </el-form-item>
         <el-row
           type="flex"
@@ -53,11 +53,11 @@
               >记住密码</el-checkbox
             ></el-col
           >
-          <el-col :span="4"
+          <!-- <el-col :span="4"
             ><el-button @click="flag = false" type="text" style="padding: 0"
               >用户注册</el-button
             ></el-col
-          >
+          > -->
         </el-row>
         <el-form-item style="width: 100%">
           <el-button
@@ -282,7 +282,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .content {
   background-repeat: no-repeat;
   background-position: center 110px;
@@ -312,7 +312,7 @@ export default {
   .refresh {
     cursor: pointer;
     margin-left: 20px;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 </style>

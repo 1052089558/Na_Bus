@@ -51,18 +51,15 @@ export default {
   width: 100%;
 }
 .el-header {
-  background-color: #d3dce6;
   height: 50px;
   width: 100%;
   padding: 0;
 }
 .el-aside {
-  background-color: #d3dce6;
   width: 250px;
   height: 100%;
 }
 .el-main {
-  background-color: #e9eef3;
   text-align: center;
 }
 </style>

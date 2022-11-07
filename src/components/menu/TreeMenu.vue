@@ -1,85 +1,91 @@
 <template>
-  <div class="nav_box">
-    <el-menu
-      router
-      :default-active="this.$route.path"
-      unique-opened
-      :background-color="backgroundColor"
-      :text-color="TextColor"
-      :active-text-color="activeTextColor"
-      :mode="mode"
-    >
-      <template v-for="one in treeData">
-        <el-sub-menu
-          :index="one.data.url"
-          v-if="one.children && one.children.length"
-          v-bind:key="one.data.menuId"
-        >
-          <template v-slot:title>
-            <i :class="one.icone" v-if="one.icone"></i>
-            <span>{{ one.data.name }}</span>
-          </template>
-          <template v-for="item in one.children">
-            <el-sub-menu
-              :index="item.data.url"
-              v-if="item.children && item.children.length"
-              v-bind:key="item.data.menuid"
-            >
-              <template v-slot:title>
+  <div class="admin_nav" :class="mode">
+    <div class="nav_box">
+      <el-menu
+        router
+        :default-active="this.$route.path"
+        unique-opened
+        :background-color="backgroundColor"
+        :text-color="TextColor"
+        :active-text-color="activeTextColor"
+        :mode="mode"
+      >
+        <template v-for="one in treeData">
+          <el-sub-menu
+            :index="one.data.url"
+            v-if="one.children && one.children.length"
+            v-bind:key="one.data.menuId"
+          >
+            <template v-slot:title>
+              <i :class="one.icone" v-if="one.icone"></i>
+              <span>{{ one.data.name }}</span>
+            </template>
+            <template v-for="item in one.children">
+              <el-sub-menu
+                :index="item.data.url"
+                v-if="item.children && item.children.length"
+                v-bind:key="item.data.menuid"
+              >
+                <template v-slot:title>
+                  <i :class="item.icone" v-if="item.icone"></i>
+                  <span class="fontClass">{{ item.data.name }}</span>
+                </template>
+                <template v-for="(k, index) in item.children" :key="index">
+                  <el-menu-item :index="k.data.url">
+                    <i :class="k.icone" v-if="k.icone"></i>
+                    <template v-slot:title class="fontClass">{{
+                      item.data.name
+                    }}</template>
+                  </el-menu-item>
+                </template>
+              </el-sub-menu>
+              <el-menu-item
+                :index="item.data.url"
+                v-bind:key="item.data.menuId"
+                v-else-if="!item.blank"
+              >
                 <i :class="item.icone" v-if="item.icone"></i>
-                <span>{{ item.data.name }}</span>
-              </template>
-              <template v-for="(k, index) in item.children" :key="index">
-                <el-menu-item :index="k.data.url">
-                  <i :class="k.icone" v-if="k.icone"></i>
-                  <template v-slot:title>{{ item.data.name }}</template>
-                </el-menu-item>
-              </template>
-            </el-sub-menu>
-            <el-menu-item
-              :index="item.data.url"
-              v-bind:key="item.data.menuId"
-              v-else-if="!item.blank"
-            >
-              <i :class="item.icone" v-if="item.icone"></i>
-              <template v-slot:title>{{ item.data.name }}</template>
-            </el-menu-item>
-            <a
-              :href="item.data.url"
-              v-bind:key="item.data.menuId + 1"
-              target="_blank"
-              class="nav_a"
-              v-else
-            >
-              <el-menu-item v-bind:key="item.data.menuId">
-                <i :class="item.icone" v-if="item.icone"></i>
-                <span>{{ item.data.name }}</span>
+                <template v-slot:title class="fontClass">{{
+                  item.data.name
+                }}</template>
               </el-menu-item>
-            </a>
-          </template>
-        </el-sub-menu>
-        <el-menu-item
-          :index="one.data.url"
-          v-bind:key="one.data.menuId + 2"
-          v-else-if="!one.blank"
-        >
-          <i :class="one.icone" v-if="one.icone"></i>
-          <template v-slot:title>{{ one.data.name }}</template>
-        </el-menu-item>
-        <a
-          :href="one.data.url"
-          v-bind:key="one.data.menuId + 3"
-          target="_blank"
-          class="nav_a"
-          v-else
-        >
-          <el-menu-item v-bind:key="one.id">
+              <a
+                :href="item.data.url"
+                v-bind:key="item.data.menuId + 1"
+                target="_blank"
+                class="nav_a"
+                v-else
+              >
+                <el-menu-item v-bind:key="item.data.menuId">
+                  <i :class="item.icone" v-if="item.icone"></i>
+                  <span class="fontClass">{{ item.data.name }}</span>
+                </el-menu-item>
+              </a>
+            </template>
+          </el-sub-menu>
+          <el-menu-item
+            :index="one.data.url"
+            v-bind:key="one.data.menuId + 2"
+            v-else-if="!one.blank"
+          >
             <i :class="one.icone" v-if="one.icone"></i>
-            <span>{{ one.data.name }}</span>
+            <template v-slot:title>{{ one.data.name }}</template>
           </el-menu-item>
-        </a>
-      </template>
-    </el-menu>
+          <a
+            :href="one.data.url"
+            v-bind:key="one.data.menuId + 3"
+            target="_blank"
+            class="nav_a"
+            v-else
+          >
+            <el-menu-item v-bind:key="one.id">
+              <i :class="one.icone" v-if="one.icone"></i>
+              <span>{{ one.data.name }}</span>
+            </el-menu-item>
+          </a>
+        </template>
+      </el-menu>
+    </div>
   </div>
 </template>
 <script >
@@ -92,6 +98,22 @@ export default {
       type: Array,
       default: [],
     },
+    backgroundColor: {
+      type: String,
+      default: "#edf0f5",
+    },
+    activeTextColor: {
+      type: String,
+      default: "#05265f",
+    },
+    TextColor: {
+      type: String,
+      default: "#7c5b5b",
+    },
+    mode: {
+      type: String,
+      default: "vertical", //horizontal
+    },
   },
   setup(props) {
     onMounted(() => {
@@ -102,7 +124,70 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped="admin_nav">
+.admin_nav {
+  &.vertical {
+    height: 100%;
+    background-color: #edf0f5;
+    overflow-y: scroll;
+    margin-right: -20px;
 
-<style scoped lang="less">
+    .nav_box {
+      width: 100%;
+
+      .el-menu {
+        border: none;
+        // .is-alive {
+        //   background: rgb(67, 74, 80) !important;
+        // }
+      }
+    }
+  }
+  .nav_a {
+    text-decoration: none;
+  }
+}
 </style>
+<style lang="scss">
+.admin_nav {
+  &.vertical {
+    .el-menu-item,
+    .el-sub-menu__title {
+      &.is-active {
+        * {
+          color: #05265f;
+        }
+      }
 
+      * {
+        color: #5b5b5b;
+        font-size: 18px;
+      }
+    }
+
+    .el-sub-menu.is-active:not(.is-opened) .el-sub-menu__title,
+    .el-menu-item.is-active {
+      // background: rgb(67, 74, 80) !important;
+      position: relative;
+
+      i {
+        &.el-sub-menu__icon-arrow {
+          color: #05265f;
+          font-weight: bold;
+        }
+      }
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 4px;
+        background: #05265f;
+      }
+    }
+  }
+}
+</style>

@@ -12,13 +12,13 @@ const routes = [
         component: Layout,
         children: [
             {
-                path: "/showorder",
-                component: () => import("../view/dispatch/showorder.vue"),
+                path: "showorder",
+                component: () => import('../view/dispatch/showorder/index.vue'),
                 name: "showorder",
             },
             {
-                path: "/carapplay",
-                component: () => import("../view/dispatch/carapplay.vue"),
+                path: "carapplay",
+                component: () => import("../view/dispatch/carapplay/index.vue"),
                 name: "carapplay",
              
             }

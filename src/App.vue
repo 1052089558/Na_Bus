@@ -5,5 +5,10 @@
   <router-view></router-view>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
+body,
+html,
+#app {
+  width: 100%;
+}
 </style>

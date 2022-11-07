@@ -1,0 +1,36 @@
+// sidebar
+$sideBarBgColor: #f7f7f7;
+
+$sideBarBorderColor: #e5ecf0;
+
+$sideBarActiveColor: #2c7ef8;
+
+$sideBarColor: #757e87;
+
+$mainBgColor: #757e87;
+
+//colors
+
+$blueColor:#409EFF;
+
+$yellowColor:#E6A23C;
+
+$greenColor: #67C23A;
+
+
+$redColor: #F56C6C;
+
+$greyColor: #909399;
+
+$lightgreyColor: #b0b4be;
+
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  sideBarBgColor: $sideBarBgColor;
+  sideBarBorderColor: $sideBarBorderColor;
+  mainBgColor: $mainBgColor;
+  sideBarActiveColor: $sideBarActiveColor;
+  sideBarColor: $sideBarColor;
+}
