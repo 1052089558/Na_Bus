@@ -1,5 +1,4 @@
 [
- 
   {
     "type": 0,
     "data": {
@@ -19,13 +18,29 @@
           "menuId": "fileInput",
           "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/showorder",
+          "url": "/dispatch/showorder",
           "name": "查看订单",
           "showT": "1",
           "tType": "1",
-          "num": 1
-        },
-        "children": []
+          "num": 1,
+          "children": [
+            {
+              "type": 0,
+              "data": {
+                "menuId": "fileInput",
+                "pMenuId": "file",
+                "appId": "iDriverAdmin",
+                "url": "/dispatch/showorder/outcar",
+                "name": "用车申请",
+                "showT": "1",
+                "tType": "1",
+                "num": 2
+              },
+              "children": []
+            }
+          ]
+        }
+      
       },
       {
         "type": 0,
@@ -33,7 +48,7 @@
           "menuId": "fileInput",
           "pMenuId": "file",
           "appId": "iDriverAdmin",
-          "url": "/carapplay",
+          "url": "/dispatch/carapplay",
           "name": "用车申请",
           "showT": "1",
           "tType": "1",

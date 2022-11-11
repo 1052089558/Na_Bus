@@ -253,8 +253,9 @@ export default {
       form.value.validate((valid) => {
         if (valid) {
           //掉登录接口
-
-          router.replace({ path: "/" });
+          sessionStorage.setItem("token", "afjskafjksafjsk");
+          // store.AddDynamicRoute(); // 获取菜单
+          router.push({ path: "/" });
           ElMessage({
             message: "登录成功！",
             type: "success",

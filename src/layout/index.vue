@@ -6,12 +6,15 @@
       </el-header>
       <el-container>
         <el-aside>
-          <el-aside :width="isCollapse ? '60px' : '210px'">
+          <el-aside>
             <tree-menu :treeData="treeData" />
           </el-aside>
         </el-aside>
         <el-main>
-          <router-view></router-view>
+          <Breadcrumb />
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
         </el-main>
       </el-container>
     </el-container>
@@ -19,15 +22,16 @@
 </template>
 <script>
 import headertitle from "./components/headertitle.vue";
-
+import Breadcrumb from "./components/breadcrumb.vue";
 import { reactive, toRefs } from "@vue/reactivity";
 import TreeMenu from "../components/menu/TreeMenu.vue";
-import treeData from "../../db.json";
+import treeData from "@/mock/menv.json";
 import { onMounted } from "@vue/runtime-core";
 export default {
   components: {
     headertitle,
     TreeMenu,
+    Breadcrumb,
   },
   setup() {
     const state = reactive({

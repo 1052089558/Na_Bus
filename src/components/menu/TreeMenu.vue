@@ -14,7 +14,7 @@
           <el-sub-menu
             :index="one.data.url"
             v-if="one.children && one.children.length"
-            v-bind:key="one.data.menuId"
+            :key="one.data.menuId"
           >
             <template v-slot:title>
               <i :class="one.icone" v-if="one.icone"></i>
@@ -24,20 +24,18 @@
               <el-sub-menu
                 :index="item.data.url"
                 v-if="item.children && item.children.length"
-                v-bind:key="item.data.menuid"
+                :key="item.data.menuid"
               >
-                <template v-slot:title>
+                <template #title>
                   <i :class="item.icone" v-if="item.icone"></i>
-                  <span class="fontClass">{{ item.data.name }}</span>
+                  <span>{{ item.data.name }}</span>
                 </template>
-                <template v-for="(k, index) in item.children" :key="index">
+                <div v-for="(k, index) in item.children" :key="index">
                   <el-menu-item :index="k.data.url">
                     <i :class="k.icone" v-if="k.icone"></i>
-                    <template v-slot:title class="fontClass">{{
-                      item.data.name
-                    }}</template>
+                    <template #title>{{ k.data.name }}</template>
                   </el-menu-item>
-                </template>
+                </div>
               </el-sub-menu>
               <el-menu-item
                 :index="item.data.url"
@@ -45,9 +43,7 @@
                 v-else-if="!item.blank"
               >
                 <i :class="item.icone" v-if="item.icone"></i>
-                <template v-slot:title class="fontClass">{{
-                  item.data.name
-                }}</template>
+                <template v-slot:title>{{ item.data.name }}</template>
               </el-menu-item>
               <a
                 :href="item.data.url"
@@ -58,7 +54,7 @@
               >
                 <el-menu-item v-bind:key="item.data.menuId">
                   <i :class="item.icone" v-if="item.icone"></i>
-                  <span class="fontClass">{{ item.data.name }}</span>
+                  <span>{{ item.data.name }}</span>
                 </el-menu-item>
               </a>
             </template>
@@ -69,7 +65,7 @@
             v-else-if="!one.blank"
           >
             <i :class="one.icone" v-if="one.icone"></i>
-            <template v-slot:title>{{ one.data.name }}</template>
+            <template #title>{{ one.data.name }}</template>
           </el-menu-item>
           <a
             :href="one.data.url"
@@ -150,6 +146,10 @@ export default {
 </style>
 <style lang="scss">
 .admin_nav {
+  .el-menu-item {
+    font-size: 18px;
+    color: #1e1e1e;
+  }
   &.vertical {
     .el-menu-item,
     .el-sub-menu__title {

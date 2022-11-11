@@ -31,7 +31,7 @@ export default {
 .context {
   display: flex;
   justify-content: space-between;
-  background-color: #464c5b;
+  background-color: #05265f;
 
   &-left {
     display: flex;

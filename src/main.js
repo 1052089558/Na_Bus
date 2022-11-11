@@ -8,6 +8,7 @@ import 'element-plus/dist/index.css'
 import VXETable from 'vxe-table'
 import 'vxe-table/lib/style.css'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+// import './router/permission'; 
 const app=createApp(App)
 app.use(store)
 app.use(router)

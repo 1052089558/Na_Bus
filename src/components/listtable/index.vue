@@ -26,6 +26,7 @@
       @checkbox-change="onCheckchange"
       @cell-dblclick="dbClick"
       v-loading="loading"
+      align="center"
       ref="mytable"
       :data="table_data"
       style="width: 100%"
@@ -46,18 +47,6 @@
         fixed="left"
         v-if="showSeq"
       ></vxe-column>
-      <vxe-column title="操作" fixed="right" :width="opWidth" v-if="hasViewOp">
-        <template #default="scope">
-          <el-row>
-            <el-button
-              :type="opType"
-              size="mini"
-              @click="handleView(scope.row)"
-              >{{ opName }}</el-button
-            >
-          </el-row>
-        </template>
-      </vxe-column>
 
       <vxe-column
         :sort-config="{ multiple: true, trigger: 'cell' }"
@@ -91,6 +80,15 @@
           </el-row>
         </template>
       </vxe-column>
+      <vxe-column title="操作" fixed="right" :width="opWidth" v-if="hasViewOp">
+        <template #default="scope">
+          <el-row v-for="(item, index) in buttonlist" :key="index">
+            <el-button @click="handleView(scope.row)">
+              {{ item.name }}
+            </el-button>
+          </el-row>
+        </template>
+      </vxe-column>
     </vxe-table>
 
     <el-pagination
@@ -110,11 +108,6 @@
 <script>
 import { toRefs, reactive, watch, onMounted, ref } from "vue";
 import moment from "moment";
-// import Statebar from "comps/Statebar/index.vue";
-// import DateStatebar from "comps/DateStatebar/index.vue";
-// import WorkorderState from "comps/WorkorderState/index.vue";
-// import FileSaver from "file-saver";
-// import XLSX from "xlsx";
 
 export default {
   components: {
@@ -129,7 +122,7 @@ export default {
     },
     showSeq: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     candownload: {
       type: Boolean,
@@ -159,6 +152,10 @@ export default {
       type: Array,
       default: [],
     },
+    buttonlist: {
+      type: Array,
+      default: [],
+    },
     tabledata: {
       type: Array,
       default: [],
@@ -175,17 +172,9 @@ export default {
       type: Boolean,
       default: true,
     },
-    opName: {
-      type: String,
-      default: "查看",
-    },
     opWidth: {
       type: Number,
-      default: 80,
-    },
-    opType: {
-      type: String,
-      default: "",
+      default: "200",
     },
     hasSelection: {
       type: Boolean,

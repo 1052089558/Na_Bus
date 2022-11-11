@@ -1,4 +1,8 @@
 <script setup >
+// if (sessionStorage.getItem('token')) {
+//   // 防止刷新页面后动态路由消失
+//   store.AddDynamicRoute();
+// }
 </script>
 
 <template>
