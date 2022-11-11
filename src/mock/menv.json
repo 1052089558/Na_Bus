@@ -30,7 +30,7 @@
                 "menuId": "fileInput",
                 "pMenuId": "file",
                 "appId": "iDriverAdmin",
-                "url": "/dispatch/showorder/outcar",
+                "url": "/dispatch/showorder/outcar/dispatch/showorder/outcar",
                 "name": "用车申请",
                 "showT": "1",
                 "tType": "1",
